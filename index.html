@@ -1,12 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Modern Bookstore</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #2d2d2d;
+    }
+
+    header {
+      background-color: #4a69bd;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin-bottom: 10px;
+      font-size: 2.5em;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .search-bar {
+      margin-top: 15px;
+    }
+
+    .search-bar input {
+      padding: 10px;
+      width: 250px;
+      border-radius: 25px;
+      border: none;
+      outline: none;
+    }
+
+    .search-bar button {
+      padding: 10px 18px;
+      border: none;
+      background-color: #82ccdd;
+      color: #2d2d2d;
+      border-radius: 25px;
+      margin-left: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .search-bar button:hover {
+      background-color: #60a3bc;
+    }
+
+    main {
+      padding: 50px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 10px;
+      position: relative;
+    }
+
+    h2::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: #4a69bd;
+      margin: 10px auto 30px auto;
+      border-radius: 2px;
+    }
+
+    .book-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .book {
+      background-color: #f8f9fa;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: box-shadow 0.3s;
+    }
+
+    .book:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+
+    .book img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .book h3 {
+      font-size: 1.2em;
+      margin: 10px 0 5px;
+    }
+
+    .book p {
+      font-size: 0.95em;
+      color: #555;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #44bd32;
+      margin-top: 8px;
+    }
+
+    .rating {
+      margin: 5px 0 10px;
+      color: #f1c40f;
+    }
+
+    .book button {
+      padding: 10px 16px;
+      border: none;
+      border-radius: 20px;
+      background-color: #4a69bd;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .book button:hover {
+      background-color: #3c6382;
+    }
+
+    .newsletter {
+      margin: 60px auto;
+      background-color: #f1f2f6;
+      padding: 30px 20px;
+      text-align: center;
+      border-radius: 10px;
+      max-width: 700px;
+    }
+
+    .newsletter h3 {
+      margin-bottom: 10px;
+      font-size: 1.5em;
+    }
+
+    .newsletter input[type="email"] {
+      padding: 10px;
+      width: 250px;
+      border-radius: 25px;
+      border: 1px solid #ccc;
+      outline: none;
+    }
+
+    .newsletter button {
+      padding: 10px 18px;
+      margin-left: 10px;
+      border: none;
+      border-radius: 25px;
+      background-color: #4a69bd;
+      color: white;
+      cursor: pointer;
+    }
+
+    .newsletter button:hover {
+      background-color: #3c6382;
+    }
+
+    footer {
+      background-color: #4a69bd;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+  </style>
 </head>
 <body>
-    <h1>Book Store</h1>
-    <p>book 1</p>
+  <header>
+    <h1>Modern Bookstore</h1>
+    <div class="search-bar">
+      <input type="text" placeholder="Search books...">
+      <button>Search</button>
+    </div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Catalog</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Featured Books</h2>
+    <div class="book-list">
+      <div class="book">
+        <img src="https://99bookstores.com/cdn/shop/files/fe666c65-7168-4ecf-bf46-8be0691103cb.jpg?v=1697611857&width=713" alt="Book 1">
+        <h3>The Great Adventure</h3>
+        <p>by John Doe</p>
+        <div class="price">$14.99</div>
+        <div class="rating">★★★★☆</div>
+        <button>Buy Now</button>
+      </div>
+
+      <div class="book">
+        <img src="https://99bookstores.com/cdn/shop/files/91bYsX41DVL._SL1500.jpg?v=1698414556&width=713" alt="Book 2">
+        <h3>Mystery in the Woods</h3>
+        <p>by Jane Smith</p>
+        <div class="price">$12.49</div>
+        <div class="rating">★★★☆☆</div>
+        <button>Buy Now</button>
+      </div>
+
+      <div class="book">
+        <img src="https://99bookstores.com/cdn/shop/files/2637d927-4b12-4316-9b2d-7901caa2783d.jpg?v=1698238143&width=713" alt="Book 3">
+        <h3>Future Tense</h3>
+        <p>by Alan Ray</p>
+        <div class="price">$16.00</div>
+        <div class="rating">★★★★★</div>
+        <button>Buy Now</button>
+      </div>
+    </div>
+  </main>
+
+  <div class="newsletter">
+    <h3>Subscribe to Our Newsletter</h3>
+    <p>Stay updated on new books and exclusive offers</p>
+    <input type="email" placeholder="Enter your email">
+    <button>Subscribe</button>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Modern Bookstore. All rights reserved.</p>
+  </footer>
 </body>
 </html>
